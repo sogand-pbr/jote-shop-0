@@ -25,7 +25,7 @@
                     <img src="{{ $product->image ? asset('storage/'.$product->image) : asset('images/placeholder.png') }}" alt="{{ $product->name }}">
                 </div>
                 <h3 class="product-card__title">{{ $product->name }}</h3>
-                <div class="product-card__price">{{ $product->price_formatted }} تومان</div>
+                <div class="product-card__price">{{ $product->price }} تومان</div>
                 <div class="product-card__stock">
                     @if($product->stock > 0)
                         موجود ({{ $product->stock }})
