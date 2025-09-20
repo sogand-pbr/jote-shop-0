@@ -39,7 +39,17 @@ class ProductController extends Controller
             ->paginate(12)
             ->withQueryString();
 
-        return view('web.home', compact('products', 'categories'));
+        return view('web.products.index', compact('products', 'categories'));
 
     }
+
+    public function show($slug)
+    {
+        $product = \App\Models\Product::where('slug', $slug)
+            ->with('category')
+            ->firstOrFail();
+
+        return view('web.products.show', compact('product'));
+    }
+
 }
