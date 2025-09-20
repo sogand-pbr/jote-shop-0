@@ -34,5 +34,6 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.create')->with('success', 'محصول با موفقیت ذخیره شد.');
 
+
     }
 }
