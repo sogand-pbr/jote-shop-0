@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 
 Route::get('/', [\App\Http\Controllers\Web\ProductController::class, 'index'])->name('home');
+Route::get('/product/{slug}', [\App\Http\Controllers\Web\ProductController::class, 'show'])
+    ->name('product.show');
+
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('products/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');

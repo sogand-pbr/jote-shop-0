@@ -21,10 +21,13 @@
     <section class="product-grid">
         @forelse($products as $product)
             <article class="product-card">
-                <div class="product-card__image">
-                    <img src="{{ $product->image ? asset('storage/'.$product->image) : asset('images/placeholder.png') }}" alt="{{ $product->name }}">
-                </div>
-                <h3 class="product-card__title">{{ $product->name }}</h3>
+                <a href="{{ route('product.show', $product->slug) }}">
+                    <div class="product-card__image">
+                        <img src="{{ $product->image ? asset('storage/'.$product->image) : asset('images/placeholder.png') }}" alt="{{ $product->name }}">
+                    </div>
+                    <h3 class="product-card__title">{{ $product->name }}</h3>
+                </a>
+
                 <div class="product-card__price">{{ $product->price }} تومان</div>
                 <div class="product-card__stock">
                     @if($product->stock > 0)
@@ -38,6 +41,7 @@
                     <a href="#" class="btn btn--primary">افزودن به سبد</a>
                 </div>
             </article>
+
         @empty
             <p>محصولی یافت نشد.</p>
         @endforelse

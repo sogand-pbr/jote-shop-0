@@ -1,0 +1,70 @@
+// resources/scss/web/_product-show.scss
+
+.product-page {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+
+    .card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-image {
+        text-align: center;
+        padding: 1rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            border: 1px solid #eee;
+        }
+    }
+
+    .product-details {
+        padding: 1.5rem;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .stock {
+            margin-bottom: 1rem;
+            font-weight: 500;
+
+            &.out {
+                color: #dc3545;
+            }
+            &.in {
+                color: #28a745;
+            }
+        }
+
+        .description {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+
+            .btn {
+                border-radius: 50px;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    }
+}
