@@ -19,12 +19,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('products', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('products.store');
 });
 
-// داشبورد (پیش‌فرض Breeze)
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// پروفایل کاربر
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
